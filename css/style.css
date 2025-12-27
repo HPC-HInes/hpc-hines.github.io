@@ -418,7 +418,12 @@ body {
   background-repeat: no-repeat, no-repeat;
 }
 .impact-media--community {
-  background: linear-gradient(135deg, rgba(47,79,58,0.35), rgba(200,155,106,0.35));
+  background:
+    linear-gradient(135deg, rgba(47,79,58,0.25), rgba(200,155,106,0.25)),
+    url("../images/hines-community-21x9.jpg");
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
 }
 
 /* Optional subtle label — only on placeholders (not on real photos) */
