@@ -54,7 +54,7 @@ body {
   padding: 0 1rem;         /* IMPORTANT: real edge protection so Donate never clips */
   display: flex;
   align-items: center;
-  justify-content: space-between; /* logo left, nav right */
+  justify-content: center; /* center the logo+nav group */
   gap: 1.25rem;
 }
 
@@ -73,17 +73,17 @@ body {
 }
 
 /*
-  Nav should take remaining space, but we center the links WITHIN that space.
-  This makes the whole "logo -> donate" feel centered as a group, without clipping.
+  Nav should NOT take remaining space.
+  It should size to content so the whole logo->donate group centers cleanly.
 */
 .site-nav {
-  flex: 1;
-  min-width: 0;            /* critical for flex children to size correctly */
+  flex: 0 0 auto;
   display: flex;
-  justify-content: center; /* centers the links block in the remaining space */
+  justify-content: flex-start;
+  align-items: center;
 }
 
-/* UL stays one line, but we also prevent it from kissing the right edge */
+/* UL stays one line */
 .site-nav ul {
   list-style: none;
   display: inline-flex;
