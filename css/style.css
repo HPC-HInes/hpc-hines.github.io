@@ -431,3 +431,75 @@ body {
   content: "";
 }
 
+/* -----------------------------------------
+   Featured Projects (image + tiles layout)
+----------------------------------------- */
+
+.projects-preview {
+  padding: 3rem 1rem;
+  background: #fff;
+}
+
+.projects-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Left image panel */
+.projects-image {
+  border-radius: 14px;
+  background:
+    linear-gradient(
+      rgba(47,79,58,0.25),
+      rgba(47,79,58,0.25)
+    ),
+    url("../images/hero-hines-lake.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Right content column */
+.projects-content h2 {
+  margin-top: 0;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: #f4f4f4;
+  border-radius: 10px;
+  padding: 1.25rem;
+  position: relative;
+}
+
+/* “2026 Calendar Coming Soon” label */
+.project-status {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .projects-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-image {
+    min-height: 240px;
+  }
+}
