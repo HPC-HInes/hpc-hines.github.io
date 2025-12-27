@@ -225,6 +225,14 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Section hero banner — Protecting Our River */
+.section-hero--river {
+  background-image: url("../images/hines-river-21x9.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 320px; /* cinematic, matches your hero scale */
+}
+
 /* Projects layout (homepage) */
 .projects-grid {
   display: grid;
