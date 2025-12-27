@@ -360,3 +360,10 @@ body {
     justify-content: center;
   }
 }
+
+.intro-mission {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--hpc-green);
+  margin-bottom: 1.25rem;
+}
