@@ -25,7 +25,7 @@ header,
 .site-header {
   background: var(--hpc-green);
   color: #fff;
-  padding: 0.5rem 1rem; /* shorter header */
+  padding: 0.35rem 1rem; /* shorter */
 }
 
 .header-inner {
@@ -48,9 +48,15 @@ header .logo,
   text-decoration: none;
 }
 
+.site-nav {
+  flex: 1;                    /* allows nav to use remaining space */
+  display: flex;
+  justify-content: flex-end;  /* pushes nav to the right */
+}
+
 /* If using an image logo */
 .logo img {
-  height: 76px;         /* larger logo */
+  height: 96px;         /* larger logo */
   width: auto;
   display: block;
 }
@@ -58,11 +64,12 @@ header .logo,
 nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-wrap: nowrap;          /* IMPORTANT: no wrapping on desktop */
+  gap: 0.9rem;                /* slightly tighter spacing */
   margin: 0;
   padding: 0;
   align-items: center;
+  white-space: nowrap;        /* keeps link text from breaking */
 }
 
 nav a {
@@ -74,7 +81,7 @@ nav a {
 
 nav a.donate {
   background: var(--hpc-accent);
-  padding: 0.45rem 0.9rem; /* slightly shorter */
+  padding: 0.4rem 0.8rem;
   border-radius: 6px;
   font-weight: 700;
   color: #fff;
@@ -294,8 +301,17 @@ footer a:hover {
 
 /* Responsive */
 @media (max-width: 900px) {
+  nav ul {
+    flex-wrap: wrap;     /* OK on mobile */
+    justify-content: center;
+  }
+
+  .site-nav {
+    justify-content: center;
+  }
+
   .logo img {
-    height: 60px;
+    height: 70px;
   }
 }
 
