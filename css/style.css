@@ -6,38 +6,58 @@ body {
   line-height: 1.6;
 }
 
-header {
+/* Header / Nav */
+header,
+.site-header {
   background: #2d5d7b;
   color: #fff;
   padding: 1rem;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
-header .logo {
+header .logo,
+.site-header .logo {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.site-header .logo a {
+  color: #fff;
+  text-decoration: none;
 }
 
 nav ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
+  padding: 0.35rem 0.2rem;
 }
 
 nav a.donate {
   background: #e67e22;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  padding: 0.55rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
 }
 
+/* Hero */
 .hero {
   background: url('../images/hero.jpg') no-repeat center center/cover;
   color: #fff;
@@ -45,36 +65,221 @@ nav a.donate {
   padding: 5rem 1rem;
 }
 
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .hero h1 {
   font-size: 2.5rem;
 }
 
+/* Primary CTA button (homepage) */
 .cta-btn {
   display: inline-block;
   margin-top: 1rem;
   background: #e67e22;
   color: #fff;
   padding: 0.7rem 1.2rem;
-  border-radius: 5px;
+  border-radius: 6px;
   text-decoration: none;
+  font-weight: 700;
 }
 
-.intro, .projects-preview, .content {
-  padding: 2rem;
+/* Secondary CTA (homepage) */
+.cta-btn.secondary {
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+/* Hero button row */
+.hero-actions {
+  display: inline-flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Common layout helpers */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 2.5rem 0;
+}
+
+/* Content sections */
+.intro,
+.projects-preview,
+.content {
+  padding: 2rem 1rem;
   max-width: 900px;
   margin: auto;
 }
 
-.project-card {
-  background: #f4f4f4;
-  margin: 1rem 0;
-  padding: 1rem;
-  border-radius: 5px;
+/* Impact section (homepage) */
+.impact {
+  padding: 2.5rem 0;
+  background: #f7f9fb;
 }
 
-footer {
+.impact-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 1rem;
+}
+
+.impact-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #e6eef5;
+}
+
+.impact-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Projects layout (homepage) */
+.projects-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: #f4f4f4;
+  margin: 0;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.section-cta {
+  margin-top: 1rem;
+}
+
+.text-link {
+  color: #2d5d7b;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+/* Cards (reusable, including events page) */
+.card {
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid--cards {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Events page helpers */
+.page-hero {
+  padding: 3rem 0;
+  background: #f7f9fb;
+}
+
+.page-hero .lede {
+  max-width: 750px;
+}
+
+/* Generic buttons (events page) */
+.btn {
+  display: inline-block;
+  background: #e67e22;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn--outline {
+  background: transparent;
+  border: 2px solid #e67e22;
+  color: #e67e22;
+}
+
+.btn--small {
+  padding: 0.55rem 0.9rem;
+  font-size: 0.95rem;
+}
+
+.card-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Footer */
+footer,
+.site-footer {
   background: #2d5d7b;
   color: #fff;
-  text-align: center;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: left;
+}
+
+.site-footer a,
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-footer a:hover,
+footer a:hover {
+  text-decoration: underline;
+}
+
+.socials a {
+  margin-right: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--cards {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    text-align: center;
+    justify-content: center;
+  }
 }
