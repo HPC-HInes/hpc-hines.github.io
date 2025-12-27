@@ -70,7 +70,7 @@ body {
   height: 96px;  /* keep your preferred header height */
   width: auto;
   display: block;
-  transform: translateY(2px); /* nudge down */
+  transform: translateY(10px); /* nudge down */
 }
 
 /*
