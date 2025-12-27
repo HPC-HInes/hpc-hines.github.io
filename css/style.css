@@ -78,7 +78,7 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 0.75rem;          /* tighter spacing */
+  gap: 0.6rem;          /* tighter spacing */
   margin: 0;
   padding: 0;
   white-space: nowrap;   /* keep links on one line when possible */
@@ -90,17 +90,21 @@ body {
   text-decoration: none;
   padding: 0.15rem 0.1rem; /* reduces nav height */
   line-height: 1.1;
-  font-size: 0.98rem;      /* slightly smaller so it fits */
+  font-size: 0.94rem;      /* slightly smaller so it fits */
   font-weight: 600;
 }
 
 /* Donate button */
 .site-nav a.donate {
   background: var(--hpc-accent);
-  padding: 0.35rem 0.75rem;
+  padding: 0.3rem 0.65rem;
   border-radius: 6px;
   font-weight: 700;
   color: #fff;
+}
+
+.site-nav li:last-child {
+  flex-shrink: 0;
 }
 
 /* Hero */
