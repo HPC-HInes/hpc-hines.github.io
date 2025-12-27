@@ -25,7 +25,7 @@ header,
 .site-header {
   background: var(--hpc-green);
   color: #fff;
-  padding: 1rem;
+  padding: 0.5rem 1rem; /* shorter header */
 }
 
 .header-inner {
@@ -50,7 +50,7 @@ header .logo,
 
 /* If using an image logo */
 .logo img {
-  height: 56px;
+  height: 76px;         /* larger logo */
   width: auto;
   display: block;
 }
@@ -68,12 +68,13 @@ nav ul {
 nav a {
   color: #fff;
   text-decoration: none;
-  padding: 0.35rem 0.2rem;
+  padding: 0.25rem 0.15rem; /* tighter */
+  line-height: 1.1;
 }
 
 nav a.donate {
   background: var(--hpc-accent);
-  padding: 0.55rem 1rem;
+  padding: 0.45rem 0.9rem; /* slightly shorter */
   border-radius: 6px;
   font-weight: 700;
   color: #fff;
@@ -87,9 +88,13 @@ nav a.donate {
   padding: 5rem 1rem;
 }
 
-.hero-inner {
-  max-width: 900px;
+.header-inner {
+  max-width: 1100px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
 .hero h1 {
@@ -289,9 +294,10 @@ footer a:hover {
 
 /* Responsive */
 @media (max-width: 900px) {
-  .impact-grid {
-    grid-template-columns: 1fr;
+  .logo img {
+    height: 60px;
   }
+}
 
   .projects-grid {
     grid-template-columns: 1fr;
