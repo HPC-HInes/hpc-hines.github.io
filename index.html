@@ -4,56 +4,122 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hines Park Conservancy</title>
+  <meta name="description" content="Hines Park Conservancy is a nonprofit dedicated to preserving, restoring, and protecting Hines Park for future generations.">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <!-- Header / Nav -->
-  <header>
-    <div class="logo">HPC</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="our-park.html">Our Park</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="get-involved.html">Get Involved</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="donate" href="get-involved.html">Donate</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="index.html">HPC</a>
+      </div>
+
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="our-park.html">Our Park</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="donate" href="donate.html">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1>Preserve and Protect Hines Park</h1>
-    <p>Our mission is to safeguard and enhance the natural beauty and community spaces of Hines Park for future generations.</p>
-    <a href="get-involved.html" class="cta-btn">Get Involved</a>
+    <div class="hero-inner">
+      <h1>Preserve and Protect Hines Park</h1>
+      <p>
+        Our mission is to safeguard and enhance the natural beauty, history,
+        and community spaces of Hines Park for future generations.
+      </p>
+
+      <div class="hero-actions">
+        <a href="get-involved.html" class="cta-btn">Get Involved</a>
+        <a href="donate.html" class="cta-btn secondary">Donate</a>
+      </div>
+    </div>
   </section>
 
-  <!-- Intro -->
+  <!-- Intro / Who We Are -->
   <section class="intro">
-    <h2>Who We Are</h2>
-    <p>The Hines Park Conservancy is a nonprofit dedicated to preserving, restoring, and protecting our community’s beloved parklands. We bring together neighbors, volunteers, and partners to ensure this special place thrives.</p>
+    <div class="container">
+      <h2>Who We Are</h2>
+      <p>
+        The Hines Park Conservancy is a nonprofit organization dedicated to preserving,
+        restoring, and protecting our community’s beloved parklands. We bring together
+        neighbors, volunteers, and partners to ensure this special place thrives for generations to come.
+      </p>
+    </div>
+  </section>
+
+  <!-- Impact / What We Do -->
+  <section class="impact">
+    <div class="container">
+      <h2>Your Support at Work</h2>
+
+      <div class="impact-grid">
+        <div class="impact-item">
+          <h3>Protecting the River</h3>
+          <p>Organizing cleanups and stewardship efforts to improve water quality and wildlife habitat.</p>
+        </div>
+
+        <div class="impact-item">
+          <h3>Maintaining Trails</h3>
+          <p>Supporting trail restoration and maintenance for walkers, runners, and cyclists.</p>
+        </div>
+
+        <div class="impact-item">
+          <h3>Building Community</h3>
+          <p>Hosting volunteer days and events that connect people to the park and each other.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Featured Projects -->
   <section class="projects-preview">
-    <h2>Featured Projects</h2>
-    <div class="project-card">
-      <h3>River Cleanup Days</h3>
-      <p>Join us for monthly cleanups to protect our waterways and wildlife habitats.</p>
-    </div>
-    <div class="project-card">
-      <h3>Trail Restoration</h3>
-      <p>We’re working to restore trails for walkers, runners, and cyclists.</p>
+    <div class="container">
+      <h2>Featured Projects</h2>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>River Cleanup Days</h3>
+          <p>Join us for seasonal cleanups to protect our waterways and wildlife habitats.</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Trail Restoration</h3>
+          <p>We’re working to restore and improve trails throughout the park system.</p>
+        </div>
+      </div>
+
+      <div class="section-cta">
+        <a href="projects.html" class="text-link">View all projects →</a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 Hines Park Conservancy | info@hpc-hines.org</p>
-    <div class="socials">
-      <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>
+        © 2025 Hines Park Conservancy<br>
+        <a href="mailto:info@hpc-hines.org">info@hpc-hines.org</a>
+      </p>
+
+      <div class="socials">
+        <!-- Hide or update these once real links exist -->
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+      </div>
     </div>
   </footer>
 </body>
