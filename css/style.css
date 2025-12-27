@@ -44,7 +44,7 @@ body {
 .header-inner {
   max-width: 1200px;     /* give nav more room */
   margin: 0 auto;
-  padding: 0 1rem;       /* left/right breathing room */
+  padding: 0 0.75rem;       /* left/right breathing room */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -70,15 +70,16 @@ body {
 .site-nav {
   display: flex;
   justify-content: flex-end;
-  flex: 1;
-  min-width: 0; /* IMPORTANT: allows flex children to shrink instead of overflow */
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: visible; /* prevent clipping inside nav container */
 }
 
 .site-nav ul {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 0.6rem;          /* tighter spacing */
+  gap: 0.5rem;          /* tighter spacing */
   margin: 0;
   padding: 0;
   white-space: nowrap;   /* keep links on one line when possible */
@@ -97,7 +98,7 @@ body {
 /* Donate button */
 .site-nav a.donate {
   background: var(--hpc-accent);
-  padding: 0.3rem 0.65rem;
+  padding: 0.3rem 0.55rem;
   border-radius: 6px;
   font-weight: 700;
   color: #fff;
