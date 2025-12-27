@@ -1,15 +1,29 @@
+/* -----------------------------------------
+   Hines Park Conservancy — Updated Styles
+   Palette tuned to match the HPC logo
+   ----------------------------------------- */
+
+:root {
+  --hpc-green: #2f4f3a;     /* deep park green */
+  --hpc-accent: #c89b6a;    /* warm trail tan */
+  --hpc-cream: #f6f3ee;     /* soft cream background */
+  --hpc-text: #333;
+  --hpc-border: #e6eef5;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: var(--hpc-text);
   line-height: 1.6;
+  background: #fff;
 }
 
 /* Header / Nav */
 header,
 .site-header {
-  background: #2d5d7b;
+  background: var(--hpc-green);
   color: #fff;
   padding: 1rem;
 }
@@ -34,6 +48,13 @@ header .logo,
   text-decoration: none;
 }
 
+/* If using an image logo */
+.logo img {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -51,10 +72,11 @@ nav a {
 }
 
 nav a.donate {
-  background: #e67e22;
+  background: var(--hpc-accent);
   padding: 0.55rem 1rem;
   border-radius: 6px;
   font-weight: 700;
+  color: #fff;
 }
 
 /* Hero */
@@ -78,7 +100,7 @@ nav a.donate {
 .cta-btn {
   display: inline-block;
   margin-top: 1rem;
-  background: #e67e22;
+  background: var(--hpc-accent);
   color: #fff;
   padding: 0.7rem 1.2rem;
   border-radius: 6px;
@@ -90,6 +112,7 @@ nav a.donate {
 .cta-btn.secondary {
   background: transparent;
   border: 2px solid #fff;
+  color: #fff;
 }
 
 /* Hero button row */
@@ -124,7 +147,7 @@ nav a.donate {
 /* Impact section (homepage) */
 .impact {
   padding: 2.5rem 0;
-  background: #f7f9fb;
+  background: var(--hpc-cream);
 }
 
 .impact-grid {
@@ -138,7 +161,7 @@ nav a.donate {
   background: #fff;
   border-radius: 8px;
   padding: 1rem;
-  border: 1px solid #e6eef5;
+  border: 1px solid var(--hpc-border);
 }
 
 .impact-item h3 {
@@ -166,7 +189,7 @@ nav a.donate {
 }
 
 .text-link {
-  color: #2d5d7b;
+  color: var(--hpc-green);
   font-weight: 700;
   text-decoration: none;
 }
@@ -194,7 +217,7 @@ nav a.donate {
 /* Events page helpers */
 .page-hero {
   padding: 3rem 0;
-  background: #f7f9fb;
+  background: var(--hpc-cream);
 }
 
 .page-hero .lede {
@@ -204,7 +227,7 @@ nav a.donate {
 /* Generic buttons (events page) */
 .btn {
   display: inline-block;
-  background: #e67e22;
+  background: var(--hpc-accent);
   color: #fff;
   padding: 0.7rem 1.2rem;
   border-radius: 6px;
@@ -214,8 +237,8 @@ nav a.donate {
 
 .btn--outline {
   background: transparent;
-  border: 2px solid #e67e22;
-  color: #e67e22;
+  border: 2px solid var(--hpc-accent);
+  color: var(--hpc-accent);
 }
 
 .btn--small {
@@ -233,7 +256,7 @@ nav a.donate {
 /* Footer */
 footer,
 .site-footer {
-  background: #2d5d7b;
+  background: var(--hpc-green);
   color: #fff;
   padding: 1.5rem 1rem;
 }
@@ -281,5 +304,9 @@ footer a:hover {
   .footer-inner {
     text-align: center;
     justify-content: center;
+  }
+
+  .logo img {
+    height: 48px;
   }
 }
