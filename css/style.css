@@ -503,3 +503,98 @@ body {
     min-height: 240px;
   }
 }
+
+/* -----------------------------------------
+   Mobile Nav + Mobile Hero Typography
+   (Desktop remains unchanged)
+----------------------------------------- */
+
+/* Hamburger button (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  margin: 6px 0;
+  border-radius: 2px;
+}
+
+/* Mobile behavior */
+@media (max-width: 900px) {
+  /* Keep header layout, but show hamburger */
+  .header-inner {
+    justify-content: space-between; /* logo left, hamburger right */
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hide the nav list by default on mobile */
+  .site-nav {
+    display: none;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* When menu is open */
+  .site-nav.is-open {
+    display: block;
+  }
+
+  /* Dropdown styling */
+  .site-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.18);
+  }
+
+  .site-nav li {
+    padding: 0;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 12px 6px;
+    font-size: 1rem;
+  }
+
+  /* Make Donate look like a full-width CTA in dropdown */
+  .site-nav a.donate {
+    display: inline-block;
+    width: fit-content;
+    margin-top: 8px;
+  }
+
+  /* HERO TEXT FIX: scale headline for phones */
+  .hero {
+    min-height: 360px; /* keep your 21:9-ish feel */
+    padding: 0 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.05rem;
+    line-height: 1.1;
+    margin: 0 0 0.75rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.45;
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
