@@ -170,5 +170,19 @@
       </div>
     </div>
   </footer>
+
+<script>
+  (function () {
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.site-nav');
+
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', function () {
+      const isOpen = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  })();
+</script>
 </body>
 </html>
