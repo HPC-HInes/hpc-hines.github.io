@@ -10,35 +10,28 @@
 
 <body>
   <!-- Header / Nav -->
-<header class="site-header">
-  <div class="header-inner">
-    <div class="logo">
-      <a href="index.html">
-        <img src="images/hpc-logo.png" alt="Hines Park Conservancy logo">
-      </a>
-    </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/hpc-logo.png" alt="Hines Park Conservancy logo">
+        </a>
+      </div>
 
-    <!-- Hamburger (mobile only; hidden on desktop by your CSS) -->
-    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
-      <span class="nav-toggle__bar"></span>
-      <span class="nav-toggle__bar"></span>
-      <span class="nav-toggle__bar"></span>
-    </button>
-
-    <nav class="site-nav" id="site-nav">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="our-park.html">Our Park</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="get-involved.html">Get Involved</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="donate" href="donate.html">Donate</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="our-park.html">Our Park</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="donate" href="donate.html">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -173,16 +166,16 @@
 
 <script>
   (function () {
-    const btn = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".site-nav");
-    if (!btn || !nav) return;
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.site-nav');
 
-    btn.addEventListener("click", function () {
-      const isOpen = nav.classList.toggle("is-open");
-      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      btn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', function () {
+      const isOpen = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   })();
-</script>  
+</script>
 </body>
 </html>
