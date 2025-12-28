@@ -597,4 +597,16 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+
+      @media (max-width: 900px) {
+     /* existing rules stay */
+   
+     .header-inner {
+       flex-wrap: wrap;
+     }
+   
+     .site-nav {
+       flex-basis: 100%;
+     }
+   }
 }
