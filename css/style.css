@@ -192,6 +192,10 @@ body {
     white-space: normal;
   }
 
+/* When JS adds is-open, show the menu */
+  .site-nav.is-open ul {
+    display: flex;
+  }   
   .site-nav a {
     display: block;
     padding: 0.65rem 0;
