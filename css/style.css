@@ -120,6 +120,27 @@ body {
 }
 
 /* -----------------------------------------
+   Hamburger (default: hidden on desktop)
+----------------------------------------- */
+
+.nav-toggle {
+  display: none;           /* KEY: prevents the "dash" on desktop */
+  background: transparent;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  margin: 6px 0;
+  border-radius: 2px;
+}
+
+/* -----------------------------------------
    Mobile Header Layout (structural, not hacky)
 ----------------------------------------- */
 
