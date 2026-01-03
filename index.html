@@ -18,7 +18,14 @@
         </a>
       </div>
 
-      <nav class="site-nav">
+      <!-- Hamburger (mobile only; hidden on desktop by your CSS) -->
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>   
+      </button>
+
+      <nav class="site-nav" id="site-nav">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -164,18 +171,18 @@
     </div>
   </footer>
 
-<script>
-  (function () {
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.querySelector('.site-nav');
-
-    if (!toggle || !menu) return;
-
-    toggle.addEventListener('click', function () {
-      const isOpen = menu.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-  })();
-</script>
+  <script>
+    (function () {
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.site-nav');
+  
+      if (!toggle || !menu) return;
+  
+      toggle.addEventListener('click', function () {
+        const isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    })();
+  </script>
 </body>
 </html>
