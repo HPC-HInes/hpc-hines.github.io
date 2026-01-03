@@ -145,7 +145,7 @@ a.donate {
    Mobile Header Layout (controls visibility correctly)
 ----------------------------------------- */
 
-@media (max-width: 900px) {
+@media (max-width: 767px) {
 
   /* Top row: logo left, hamburger right */
   .header-inner {
