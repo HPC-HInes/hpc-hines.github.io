@@ -175,10 +175,10 @@ body {
 
   /* Top row: logo left, hamburger right */
   .header-inner {
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* allows dropdown row */
-  }
+  justify-content: flex-start; /* we control spacing manually */
+  align-items: center;
+  flex-wrap: wrap; /* still allows dropdown row */
+}
 
   .logo { 
     order: 1; 
@@ -236,12 +236,13 @@ body {
   /* Mobile: keep Donate visible in header (outside hamburger) */
   .donate--primary {
     order: 2;
-    margin-left: 0.5rem;
+    margin-left: auto;
   }
 
   /* Move hamburger to the far right */
   .nav-toggle {
     order: 3;
+    margin-left: 0; 
   }   
 }
 
