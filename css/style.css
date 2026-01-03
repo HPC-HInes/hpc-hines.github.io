@@ -528,14 +528,11 @@ body {
 }
 
 /* Mobile behavior */
-  .header-inner {
-    justify-content: space-between; /* logo left, hamburger right */
-    flex-wrap: wrap;                /* allows dropdown to sit on its own row */
-  }
-
-  .site-nav {
-    flex-basis: 100%;               /* dropdown takes full width */
-  }
+@media (max-width: 900px) {
+  .header-inner {
+    justify-content: space-between; /* logo left, hamburger right */
+    flex-wrap: wrap;                /* dropdown sits on its own row */
+  }
 
   .nav-toggle {
     display: inline-flex;
@@ -543,14 +540,15 @@ body {
     justify-content: center;
   }
 
-  /* Hide the nav list by default on mobile */
+  /* Hide nav by default */
   .site-nav {
     display: none;
     width: 100%;
+    flex-basis: 100%;
     margin-top: 10px;
   }
 
-  /* When menu is open */
+  /* When open */
   .site-nav.is-open {
     display: block;
   }
@@ -562,10 +560,7 @@ body {
     gap: 0;
     padding: 10px 0;
     border-top: 1px solid rgba(255,255,255,0.18);
-  }
-
-  .site-nav li {
-    padding: 0;
+    white-space: normal; /* important: don't force nowrap in dropdown */
   }
 
   .site-nav a {
@@ -574,16 +569,15 @@ body {
     font-size: 1rem;
   }
 
-  /* Make Donate look like a full-width CTA in dropdown */
   .site-nav a.donate {
     display: inline-block;
     width: fit-content;
     margin-top: 8px;
   }
 
-  /* HERO TEXT FIX: scale headline for phones */
+  /* HERO TEXT FIX */
   .hero {
-    min-height: 360px; /* keep your 21:9-ish feel */
+    min-height: 360px;
     padding: 0 1rem;
   }
 
