@@ -172,6 +172,18 @@
     </div>
   </footer>
 
+<script>
+  function checkMobile() {
+    if (window.innerWidth <= 767) {
+      document.body.classList.add('is-mobile');
+    } else {
+      document.body.classList.remove('is-mobile');
+    }
+  }
+  window.addEventListener('resize', checkMobile);
+  checkMobile();
+</script>
+  
   <script>
     (function () {
       const toggle = document.querySelector('.nav-toggle');
