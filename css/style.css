@@ -119,25 +119,36 @@ body {
   flex-shrink: 0;
 }
 
-/* -----------------------------------------
-   Hamburger (default: hidden on desktop)
------------------------------------------ */
-
+/* Hamburger (VISIBLE by default) */
 .nav-toggle {
-  display: none;           /* KEY: prevents the "dash" on desktop */
+  display: inline-flex;          /* changed from none */
+  align-items: center;
+  justify-content: center;
+  width: 48px;                   /* guarantees you can see/tap it */
+  height: 48px;
   background: transparent;
   border: 0;
-  padding: 10px;
+  padding: 0;
   cursor: pointer;
 }
 
+/* Hide hamburger on desktop only */
+@media (min-width: 901px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+
 .nav-toggle__bar {
-  display: block;
+  display: block !important;
   width: 26px;
-  height: 2px;
+  height: 3px;
   background: #fff;
-  margin: 0;
   border-radius: 2px;
+}
+
+.nav-toggle__bar + .nav-toggle__bar {
+  margin-top: 6px;
 }
 
 /* -----------------------------------------
