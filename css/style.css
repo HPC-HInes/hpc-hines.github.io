@@ -114,6 +114,17 @@ body {
   color: #fff;
 }
 
+/* Standalone Donate button (used for mobile + desktop) */
+.donate--primary {
+  background: var(--hpc-accent);
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
 /* Make sure Donate never shrinks weirdly */
 .site-nav li:last-child {
   flex-shrink: 0;
@@ -136,6 +147,9 @@ body {
 @media (min-width: 901px) {
   .nav-toggle {
     display: none;
+  }
+  .donate--primary {
+     margin-left: 0.25rem;
   }
 }
 
@@ -218,6 +232,17 @@ body {
   .site-nav a.donate {
     margin-top: 0.5rem;
   }
+
+  /* Mobile: keep Donate visible in header (outside hamburger) */
+  .donate--primary {
+    order: 2;
+    margin-left: 0.5rem;
+  }
+
+  /* Move hamburger to the far right */
+  .nav-toggle {
+    order: 3;
+  }   
 }
 
 /* -----------------------------------------
