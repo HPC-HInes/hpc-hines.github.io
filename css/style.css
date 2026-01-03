@@ -106,7 +106,7 @@ body {
 }
 
 /* Donate button */
-donate {
+a.donate {
   background: var(--hpc-accent);
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
