@@ -1,143 +1,147 @@
 /* -----------------------------------------
-   Hines Park Conservancy — Updated Styles
-   Palette tuned to match the HPC logo
-   ----------------------------------------- */
+   Hines Park Conservancy — Updated Styles
+   Palette tuned to match the HPC logo
+   ----------------------------------------- */
 
 :root {
-  --hpc-green: #2f4f3a;     /* deep park green */
-  --hpc-accent: #c89b6a;    /* warm trail tan */
-  --hpc-cream: #f6f3ee;     /* soft cream background */
-  --hpc-text: #333;
-  --hpc-border: #e6eef5;
+  --hpc-green: #2f4f3a;     /* deep park green */
+  --hpc-accent: #c89b6a;    /* warm trail tan */
+  --hpc-cream: #f6f3ee;     /* soft cream background */
+  --hpc-text: #333;
+  --hpc-border: #e6eef5;
 }
 
 /* Prevent horizontal scroll and make sizing predictable */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* prevents side-scrolling caused by wide nav */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevents side-scrolling caused by wide nav */
 }
 
 body {
-  font-family: Arial, sans-serif;
-  color: var(--hpc-text);
-  line-height: 1.6;
-  background: #fff;
+  font-family: Arial, sans-serif;
+  color: var(--hpc-text);
+  line-height: 1.6;
+  background: #fff;
 }
 
 /* -----------------------------------------
-   Header / Nav (single row, centered group)
-   ----------------------------------------- */
+   Header / Nav (single row, centered group)
+   ----------------------------------------- */
 
 .site-header {
-  width: 100%;
-  background: var(--hpc-green);
-  color: #fff;
-  padding: 0.2rem 0; /* slimmer header */
+  width: 100%;
+  background: var(--hpc-green);
+  color: #fff;
+  padding: 0.2rem 0; /* slimmer header */
 }
 
 /*
-  Use full width for header-inner so it can "give" space to the nav.
-  Then center the overall layout with a max-width container.
+  Use full width for header-inner so it can "give" space to the nav.
+  Then center the overall layout with a max-width container.
 */
 .header-inner {
-  max-width: 1100px;       /* slightly tighter than 1200 to reduce dead space */
-  margin: 0 auto;
-  padding: 0 1rem;         /* IMPORTANT: real edge protection so Donate never clips */
-  display: flex;
-  align-items: center;
-  justify-content: center; /* center the logo+nav group */
-  gap: 1.25rem;
+  max-width: 1100px;       /* slightly tighter than 1200 to reduce dead space */
+  margin: 0 auto;
+  padding: 0 1rem;         /* IMPORTANT: real edge protection so Donate never clips */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center the logo+nav group */
+  gap: 0.55rem; /* Match original ul gap to avoid crunching */
 }
 
 /* Logo */
 .site-header .logo a {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
 }
 
 .logo img {
-  height: 96px;  /* keep your preferred header height */
-  width: auto;
-  display: block;
-  transform: translateY(10px); /* nudge down */
+  height: 96px;  /* keep your preferred header height */
+  width: auto;
+  display: block;
+  transform: translateY(10px); /* nudge down */
 }
 
 /*
-  Nav should NOT take remaining space.
-  It should size to content so the whole logo->donate group centers cleanly.
+  Nav should NOT take remaining space.
+  It should size to content so the whole logo->donate group centers cleanly.
 */
 .site-nav {
-  flex: 0 0 auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 /* UL stays one line */
 .site-nav ul {
-  list-style: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;     /* single row, as requested */
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;     /* single row, as requested */
 }
 
 /* Nav links */
 .site-nav a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.15rem 0.1rem;
-  line-height: 1.1;
-  font-size: 0.94rem;
-  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.15rem 0.1rem;
+  line-height: 1.1;
+  font-size: 0.94rem;
+  font-weight: 600;
 }
 
-/* Donate button */
-.site-nav a.donate {
-  background: var(--hpc-accent);
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  font-weight: 700;
-  color: #fff;
+/* Donate button (independent styles, matching your original) */
+.donate {
+  background: var(--hpc-accent);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
-/* Make sure Donate never shrinks weirdly */
-.site-nav li:last-child {
-  flex-shrink: 0;
+/* Header right wrapper (for donate + toggle grouping on desktop/mobile) */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem; /* Match original ul gap */
 }
 
 /* -----------------------------------------
-   Hamburger (default: hidden on desktop)
+   Hamburger (default: hidden on desktop)
 ----------------------------------------- */
 
 .nav-toggle {
-  display: none;           /* KEY: prevents the "dash" on desktop */
-  background: transparent;
-  border: 0;
-  padding: 10px;
-  cursor: pointer;
+  display: none;           /* KEY: prevents the "dash" on desktop */
+  background: transparent;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .nav-toggle__bar {
-  display: block;
-  width: 26px;
-  height: 2px;
-  background: #fff;
-  margin: 6px 0;
-  border-radius: 2px;
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  margin: 6px 0;
+  border-radius: 2px;
 }
 
 /* -----------------------------------------
@@ -146,7 +150,7 @@ body {
 
 @media (max-width: 900px) {
 
-  /* Top row: logo left, hamburger right */
+  /* Top row: logo left, header-right (donate + hamburger) right */
   .header-inner {
     justify-content: space-between;
     align-items: center;
@@ -163,12 +167,18 @@ body {
     transform: none;
   }
 
-  .nav-toggle {
+  .header-right {
     order: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Slight space for mobile fit */
+    margin-left: auto; /* Push to right */
+  }
+
+  .nav-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-left: auto; /* force it to the far right */
   }
 
   /* Nav container always exists, but the UL is what we show/hide */
@@ -202,8 +212,8 @@ body {
     font-size: 1rem;
   }
 
-  .site-nav a.donate {
-    margin-top: 0.5rem;
+  .donate {
+    margin-top: 0.5rem; /* If needed for dropdown spacing, but since it's outside, ignore */
   }
 }
 
