@@ -528,11 +528,14 @@ body {
 }
 
 /* Mobile behavior */
-@media (max-width: 900px) {
-  /* Keep header layout, but show hamburger */
-  .header-inner {
-    justify-content: space-between; /* logo left, hamburger right */
-  }
+  .header-inner {
+    justify-content: space-between; /* logo left, hamburger right */
+    flex-wrap: wrap;                /* allows dropdown to sit on its own row */
+  }
+
+  .site-nav {
+    flex-basis: 100%;               /* dropdown takes full width */
+  }
 
   .nav-toggle {
     display: inline-flex;
