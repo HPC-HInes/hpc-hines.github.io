@@ -194,11 +194,6 @@ body {
     white-space: normal;
   }
 
-  /* When opened, show the list */
-  .site-nav.is-open ul {
-    display: flex;
-  }
-
   .site-nav a {
     display: block;
     padding: 0.65rem 0;
