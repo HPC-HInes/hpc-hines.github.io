@@ -119,10 +119,12 @@ body {
   flex-shrink: 0;
 }
 
-/* Hamburger (desktop hidden by default) */
+/* Hamburger (VISIBLE by default) */
 .nav-toggle {
-  display: none;                 /* ✅ default off */
-  width: 48px;                   /* tap target */
+  display: inline-flex;          /* changed from none */
+  align-items: center;
+  justify-content: center;
+  width: 48px;                   /* guarantees you can see/tap it */
   height: 48px;
   background: transparent;
   border: 0;
@@ -130,12 +132,23 @@ body {
   cursor: pointer;
 }
 
+/* Hide hamburger on desktop only */
+@media (min-width: 901px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+
 .nav-toggle__bar {
-  display: block;
+  display: block !important;
   width: 26px;
   height: 3px;
   background: #fff;
   border-radius: 2px;
+}
+
+.nav-toggle__bar + .nav-toggle__bar {
+  margin-top: 6px;
 }
 
 /* -----------------------------------------
@@ -163,7 +176,7 @@ body {
 
   .nav-toggle {
     order: 2;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
