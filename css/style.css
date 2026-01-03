@@ -34,107 +34,128 @@ body {
 }
 
 /* -----------------------------------------
-   Header / Nav
-   Desktop: centered logo + inline nav
-   Mobile: logo left + hamburger right + dropdown
------------------------------------------ */
+   Header / Nav (single row, centered group)
+   ----------------------------------------- */
 
 .site-header {
-  width: 100%;
-  background: var(--hpc-green);
-  color: #fff;
-  padding: 0.2rem 0;
+  width: 100%;
+  background: var(--hpc-green);
+  color: #fff;
+  padding: 0.2rem 0; /* slimmer header */
 }
 
+/*
+  Use full width for header-inner so it can "give" space to the nav.
+  Then center the overall layout with a max-width container.
+*/
 .header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* desktop: centered group */
-  gap: 1.25rem;
+  max-width: 1100px;       /* slightly tighter than 1200 to reduce dead space */
+  margin: 0 auto;
+  padding: 0 1rem;         /* IMPORTANT: real edge protection so Donate never clips */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center the logo+nav group */
+  gap: 1.25rem;
 }
 
 /* Logo */
 .site-header .logo a {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
 }
 
 .logo img {
-  height: 96px;
-  width: auto;
-  display: block;
-  transform: translateY(10px);
+  height: 96px;  /* keep your preferred header height */
+  width: auto;
+  display: block;
+  transform: translateY(10px); /* nudge down */
 }
 
-/* Nav (desktop inline) */
+/*
+  Nav should NOT take remaining space.
+  It should size to content so the whole logo->donate group centers cleanly.
+*/
 .site-nav {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
+/* UL stays one line */
 .site-nav ul {
-  list-style: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;     /* single row, as requested */
 }
 
+/* Nav links */
 .site-nav a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.15rem 0.1rem;
-  line-height: 1.1;
-  font-size: 0.94rem;
-  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.15rem 0.1rem;
+  line-height: 1.1;
+  font-size: 0.94rem;
+  font-weight: 600;
 }
 
+/* Donate button */
 .site-nav a.donate {
-  background: var(--hpc-accent);
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  font-weight: 700;
-  color: #fff;
+  background: var(--hpc-accent);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 700;
+  color: #fff;
 }
 
+/* Make sure Donate never shrinks weirdly */
 .site-nav li:last-child {
-  flex-shrink: 0;
+  flex-shrink: 0;
 }
 
-/* Hamburger (desktop hidden) */
+/* -----------------------------------------
+   Hamburger (default: hidden on desktop)
+----------------------------------------- */
+
 .nav-toggle {
-  display: none;
-  background: transparent;
-  border: 0;
-  padding: 10px;
-  cursor: pointer;
+  display: none;           /* KEY: prevents the "dash" on desktop */
+  background: transparent;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .nav-toggle__bar {
-  display: block;
-  width: 26px;
-  height: 2px;
-  background: #fff;
-  margin: 6px 0;
-  border-radius: 2px;
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  margin: 6px 0;
+  border-radius: 2px;
 }
 
-/* ----------------------------
-   Mobile Header
----------------------------- */
+/* -----------------------------------------
+   Mobile Header Layout (controls visibility correctly)
+----------------------------------------- */
+
 @media (max-width: 900px) {
+
+  /* Top row: logo left, hamburger right */
   .header-inner {
-    justify-content: space-between; /* logo left, hamburger right */
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;               /* allows dropdown row */
+    flex-wrap: wrap; /* allows dropdown row */
+  }
+
+  .logo { 
+    order: 1; 
+    flex: 0 0 auto;
   }
 
   .logo img {
@@ -143,39 +164,40 @@ body {
   }
 
   .nav-toggle {
-    display: inline-flex;          /* show hamburger on mobile */
+    order: 2;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-left: auto;
+    margin-left: auto; /* force it to the far right */
   }
 
-  /* Important: keep nav container present, hide ONLY the list */
+  /* Nav container always exists, but the UL is what we show/hide */
   .site-nav {
+    order: 3;
     flex: 0 0 100%;
     width: 100%;
     margin-top: 0.75rem;
-    display: block;
   }
 
-  /* Hide links by default (prevents the desktop ribbon) */
+  /* Hide the actual links by default on mobile */
   .site-nav ul {
-    display: none;
+    display: none;              /* KEY: prevents "desktop ribbon" on mobile */
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
     padding: 0.75rem 0;
+    margin: 0;
     border-top: 1px solid rgba(255,255,255,0.25);
     white-space: normal;
   }
 
-  /* When opened, show dropdown */
+  /* When opened, show the list */
   .site-nav.is-open ul {
     display: flex;
   }
 
   .site-nav a {
     display: block;
-    width: 100%;
     padding: 0.65rem 0;
     font-size: 1rem;
   }
