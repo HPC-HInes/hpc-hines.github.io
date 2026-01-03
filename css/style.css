@@ -147,10 +147,11 @@ body {
 @media (max-width: 900px) {
 
   /* Switch header to left/right layout */
-  .header-inner {
-    justify-content: space-between;
-    align-items: center;
-  }
+    .header-inner {
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* KEY: allows dropdown nav to sit on its own row */
+  }
 
   /* Logo stays visible and left-aligned */
   .logo {
@@ -170,11 +171,12 @@ body {
   }
 
   /* Hide nav by default */
-  .site-nav {
-    display: none;
-    width: 100%;
-    margin-top: 0.75rem;
-  }
+    .site-nav {
+    display: none;
+    width: 100%;
+    flex: 0 0 100%;      /* KEY: forces full-width row under logo/hamburger */
+    margin-top: 0.75rem;
+  }
 
   /* Nav opens BELOW header */
   .site-nav.is-open {
@@ -464,10 +466,11 @@ body {
      but since you said NO second row, we keep it single row.
      If it ever becomes too tight on mobile, we should switch to a hamburger menu. */
 
-  .header-inner {
+    .header-inner {
     max-width: 100%;
     padding: 0 0.75rem;
     gap: 0.75rem;
+    flex-wrap: wrap; /* keep consistent with mobile header behavior */
   }
 
   .logo img {
