@@ -120,6 +120,68 @@ body {
 }
 
 /* -----------------------------------------
+   Mobile Header Layout (structural, not hacky)
+----------------------------------------- */
+
+@media (max-width: 900px) {
+
+  /* Switch header to left/right layout */
+  .header-inner {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Logo stays visible and left-aligned */
+  .logo {
+    flex: 0 0 auto;
+  }
+
+  .logo img {
+    height: 60px;
+    transform: none;
+  }
+
+  /* Show hamburger on mobile */
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hide nav by default */
+  .site-nav {
+    display: none;
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+
+  /* Nav opens BELOW header */
+  .site-nav.is-open {
+    display: block;
+  }
+
+  /* Dropdown list */
+  .site-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0.75rem 0;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    white-space: normal;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 0.65rem 0;
+    font-size: 1rem;
+  }
+
+  .site-nav a.donate {
+    margin-top: 0.5rem;
+  }
+}
+
+/* -----------------------------------------
    Hero
    ----------------------------------------- */
 
@@ -150,6 +212,33 @@ body {
 
 .hero h1 {
   font-size: 2.5rem;
+}
+
+/* -----------------------------------------
+   Mobile Hero Typography (stable, Safari-safe)
+----------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .hero {
+    height: auto;
+    min-height: 360px;
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.05rem;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.45;
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* Primary CTA button (homepage) */
