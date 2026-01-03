@@ -12,30 +12,36 @@
   <!-- Header / Nav -->
   <header class="site-header">
     <div class="header-inner">
-      <div class="logo">
-        <a href="index.html">
-          <img src="images/hpc-logo.png" alt="Hines Park Conservancy logo">
-        </a>
-      </div>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/hpc-logo.png" alt="Hines Park Conservancy logo">
+    </a>
+  </div>
 
-      <!-- Hamburger (mobile only; hidden on desktop by your CSS) -->
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
-        <span class="nav-toggle__icon" aria-hidden="true"></span>
-      </button>
+  <!-- Right side: Donate + Hamburger always stay together -->
+  <div class="header-actions">
+    <a href="/donate.html" class="donate donate--primary">Donate</a>
 
-      <nav class="site-nav" id="site-nav">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/our-park.html">Our Park</a></li>
-          <li><a href="/projects.html">Projects</a></li>
-          <li><a href="/events.html">Events</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      
-      <a href="/donate.html" class="donate donate--primary">Donate</a>
-    </div>
+    <button class="nav-toggle" type="button"
+      aria-label="Open menu"
+      aria-controls="site-nav"
+      aria-expanded="false">
+      <span class="nav-toggle__icon" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <!-- Dropdown list (full width on mobile via CSS) -->
+  <nav class="site-nav" id="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/our-park.html">Our Park</a></li>
+      <li><a href="/projects.html">Projects</a></li>
+      <li><a href="/events.html">Events</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</div>
   </header>
 
   <!-- Hero Section -->
