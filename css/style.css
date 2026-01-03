@@ -180,6 +180,30 @@ body {
   flex-wrap: wrap; /* still allows dropdown row */
 }
 
+/* Right-side actions: Donate + Hamburger stay together */
+.header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Mobile layout: logo left, actions right, nav drops to next row */
+@media (max-width: 900px) {
+  .header-inner {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .header-actions {
+    margin-left: auto;
+  }
+
+  .site-nav {
+    flex: 0 0 100%;
+    width: 100%;
+    order: 3; /* ensures nav row is below */
+  }
+}   
   .logo { 
     order: 1; 
     flex: 0 0 auto;
