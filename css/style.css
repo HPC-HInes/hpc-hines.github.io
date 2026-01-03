@@ -534,6 +534,10 @@ body {
     flex-wrap: wrap;                /* dropdown sits on its own row */
   }
 
+   .logo img {
+      transform: none;
+   }
+   
   .nav-toggle {
     display: inline-flex;
     align-items: center;
