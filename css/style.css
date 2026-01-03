@@ -139,16 +139,18 @@ body {
   }
 }
 
-.nav-toggle__bar {
-  display: block !important;
-  width: 26px;
-  height: 3px;
-  background: #fff;
+/* Hamburger icon (always 3 clean bars) */
+.nav-toggle__icon {
+  width: 28px;
+  height: 20px;                 /* total icon height */
+  display: block;
+  background:
+    linear-gradient(#fff 0 0) top,
+    linear-gradient(#fff 0 0) center,
+    linear-gradient(#fff 0 0) bottom;
+  background-size: 100% 3px;    /* bar thickness */
+  background-repeat: no-repeat;
   border-radius: 2px;
-}
-
-.nav-toggle__bar + .nav-toggle__bar {
-  margin-top: 6px;
 }
 
 /* -----------------------------------------
@@ -177,10 +179,8 @@ body {
   .nav-toggle {
     order: 2;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6px;
     margin-left: auto; /* force it to the far right */
     padding: 10px;
   }
