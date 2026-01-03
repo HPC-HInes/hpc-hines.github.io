@@ -55,7 +55,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center; /* center the logo+nav group */
-  gap: 1.25rem;
+  gap: 0.55rem;
 }
 
 /* Logo */
@@ -106,17 +106,12 @@ body {
 }
 
 /* Donate button */
-.site-nav a.donate {
+a.donate {
   background: var(--hpc-accent);
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
   font-weight: 700;
   color: #fff;
-}
-
-/* Make sure Donate never shrinks weirdly */
-.site-nav li:last-child {
-  flex-shrink: 0;
 }
 
 /* -----------------------------------------
@@ -140,6 +135,12 @@ body {
   border-radius: 2px;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
 /* -----------------------------------------
    Mobile Header Layout (controls visibility correctly)
 ----------------------------------------- */
@@ -150,7 +151,7 @@ body {
   .header-inner {
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* allows dropdown row */
+    flex-wrap: wrap;
   }
 
   .logo { 
@@ -163,15 +164,6 @@ body {
     transform: none;
   }
 
-  .nav-toggle {
-    order: 2;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto; /* force it to the far right */
-  }
-
-  /* Nav container always exists, but the UL is what we show/hide */
   .site-nav {
     order: 3;
     flex: 0 0 100%;
@@ -179,9 +171,19 @@ body {
     margin-top: 0.75rem;
   }
 
-  /* Hide the actual links by default on mobile */
+  .header-right {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .site-nav ul {
-    display: none;              /* KEY: prevents "desktop ribbon" on mobile */
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
@@ -191,7 +193,6 @@ body {
     white-space: normal;
   }
 
-  /* When opened, show the list */
   .site-nav.is-open ul {
     display: flex;
   }
@@ -200,10 +201,6 @@ body {
     display: block;
     padding: 0.65rem 0;
     font-size: 1rem;
-  }
-
-  .site-nav a.donate {
-    margin-top: 0.5rem;
   }
 }
 
