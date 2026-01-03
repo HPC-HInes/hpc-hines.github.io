@@ -608,3 +608,7 @@ body {
     min-height: 240px;
   }
 }
+
+/* TEMP TEST — paste at VERY BOTTOM of style.css */
+.nav-toggle { display: inline-flex !important; }
+.site-nav ul { display: none !important; }
