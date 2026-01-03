@@ -174,13 +174,14 @@
 
 <script>
   function checkMobile() {
-    if (/Mobi|Android/i.test(navigator.userAgent) || screen.width <= 767) {
+    if (screen.width <= 1024) {
       document.body.classList.add('is-mobile');
     } else {
       document.body.classList.remove('is-mobile');
     }
   }
   window.addEventListener('resize', checkMobile);
+  window.addEventListener('orientationchange', checkMobile);
   checkMobile();
 </script>
   
