@@ -11,35 +11,34 @@
 <body>
   <!-- Header / Nav -->
   <header class="site-header">
-  <div class="header-inner">
-    <div class="logo">
-      <a href="index.html">
-        <img src="images/hpc-logo.png" alt="Hines Park Conservancy logo">
-      </a>
-    </div>
+    <div class="header-inner">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/hpc-logo.png" alt="Hines Park Conservancy logo">
+        </a>
+      </div>
 
-    <nav class="site-nav" id="site-nav">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="our-park.html">Our Park</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="get-involved.html">Get Involved</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="header-right">
-      <a class="donate" href="donate.html">Donate</a>
+      <!-- Hamburger (mobile only; hidden on desktop by your CSS) -->
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>   
       </button>
-    </div>
-  </div>
-</header>
+
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="our-park.html">Our Park</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="donate" href="donate.html">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -172,19 +171,6 @@
     </div>
   </footer>
 
-<script>
-  function checkMobile() {
-    if (screen.width <= 1024) {
-      document.body.classList.add('is-mobile');
-    } else {
-      document.body.classList.remove('is-mobile');
-    }
-  }
-  window.addEventListener('resize', checkMobile);
-  window.addEventListener('orientationchange', checkMobile);
-  checkMobile();
-</script>
-  
   <script>
     (function () {
       const toggle = document.querySelector('.nav-toggle');
