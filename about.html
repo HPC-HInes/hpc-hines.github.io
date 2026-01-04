@@ -59,5 +59,55 @@
   <footer>
     <p>© 2025 Hines Park Conservancy | info@hpc-hines.org</p>
   </footer>
+
+  <script>
+(function () {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('site-nav');
+  const list = nav ? nav.querySelector('ul') : null;
+
+  if (!toggle || !nav || !list) return;
+
+  const mq = window.matchMedia('(max-width: 900px)');
+
+  function setExpanded(isOpen) {
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (isOpen) {
+      list.style.display = 'flex';
+      list.style.flexDirection = 'column';
+      list.style.alignItems = 'flex-start';
+    } else {
+      list.style.display = 'none';
+    }
+  }
+
+  function syncToViewport() {
+    if (mq.matches) {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      setExpanded(isOpen);
+    } else {
+      toggle.setAttribute('aria-expanded', 'false');
+      list.style.display = '';
+      list.style.flexDirection = '';
+      list.style.alignItems = '';
+    }
+  }
+
+  toggle.addEventListener('click', function () {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    setExpanded(!isOpen);
+  });
+
+  nav.addEventListener('click', function (e) {
+    const clickedLink = e.target.closest('a');
+    if (clickedLink && mq.matches) setExpanded(false);
+  });
+
+  mq.addEventListener ? mq.addEventListener('change', syncToViewport)
+                      : mq.addListener(syncToViewport);
+
+  syncToViewport();
+})();
+</script>  
 </body>
 </html>
