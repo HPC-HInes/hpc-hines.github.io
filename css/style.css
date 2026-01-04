@@ -188,6 +188,12 @@ body {
     justify-content: center;   /* center the link row */
   }
 
+  .header-actions {
+    order: 3;
+    margin-left: auto;
+    flex: 0 0 auto;
+   } 
+   
   .donate--primary {
     order: 3;
     margin-left: auto;         /* FORCE donate to far right */
