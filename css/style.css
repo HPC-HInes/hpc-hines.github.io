@@ -189,9 +189,11 @@ body {
   }
 
   .donate--primary {
-    order: 999 !important;
-    margin-left: auto !important;         /* FORCE donate to far right */
-    flex: 0 0 auto;
+    order: 3;
+    margin-left: auto;         /* FORCE donate to far right */
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 
   /* Hide hamburger on desktop */
