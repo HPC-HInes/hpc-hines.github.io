@@ -168,30 +168,40 @@ body {
 }
 
 /* -----------------------------
-   Desktop header alignment
+   Desktop header alignment (FIX Donate position)
 ----------------------------- */
 @media (min-width: 901px) {
+
+  /* Ensure desktop layout is: logo | nav | donate */
+  .header-inner {
+    justify-content: flex-start; /* not space-between */
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .site-nav {
+    order: 2;
+    flex: 1 1 auto;            /* nav gets the middle space */
+    display: flex;
+    justify-content: center;   /* center the link row */
+  }
+
+  .donate--primary {
+    order: 3;
+    margin-left: auto;         /* FORCE donate to far right */
+    flex: 0 0 auto;
+  }
+
   /* Hide hamburger on desktop */
   .nav-toggle {
     display: none !important;
   }
 
-  /* Center the nav between logo and donate */
-  .site-nav {
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: center;
-  }
-
-  /* Give nav links a little more breathing room */
+  /* Spacing for desktop nav links */
   .site-nav ul {
-    gap: 0.9rem;
-  }
-
-  /* Ensure Donate stays on the far right */
-  .donate--primary {
-    flex: 0 0 auto;
-    margin-left: 1rem;
+    gap: 1rem;
   }
 }
 
