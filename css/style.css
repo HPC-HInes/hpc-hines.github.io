@@ -191,9 +191,7 @@ body {
   .donate--primary {
     order: 3;
     margin-left: auto;         /* FORCE donate to far right */
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    flex: 0 0 auto;
   }
 
   /* Hide hamburger on desktop */
@@ -309,7 +307,7 @@ body {
     margin-left: 0; 
   }   
 }
-}
+
 /* -----------------------------------------
    Hero
    ----------------------------------------- */
@@ -710,10 +708,4 @@ body {
   .projects-image {
     min-height: 240px;
   }
-@media (min-width: 901px) {
-  .header-inner > .header-actions {
-    order: 3 !important;
-    margin-left: auto !important;
-  }
-}   
 }
