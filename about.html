@@ -12,25 +12,36 @@
   <!-- Header / Nav -->
   <header class="site-header">
     <div class="header-inner">
-      <div class="logo">
-        <a href="index.html">
-          <img src="images/hpc-logo.png" alt="Hines Park Conservancy logo">
-        </a>
-      </div>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/hpc-logo.png" alt="Hines Park Conservancy logo">
+    </a>
+  </div>
 
-      <nav class="site-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="our-park.html">Our Park</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="get-involved.html">Get Involved</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a class="donate" href="donate.html">Donate</a></li>
-        </ul>
-      </nav>
-    </div>
+  <!-- Right side: Donate + Hamburger always stay together -->
+  <div class="header-actions">
+    <a href="/donate.html" class="donate donate--primary">Donate</a>
+
+    <button class="nav-toggle" type="button"
+      aria-label="Open menu"
+      aria-controls="site-nav"
+      aria-expanded="false">
+      <span class="nav-toggle__icon" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <!-- Dropdown list (full width on mobile via CSS) -->
+  <nav class="site-nav" id="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/our-park.html">Our Park</a></li>
+      <li><a href="/projects.html">Projects</a></li>
+      <li><a href="/events.html">Events</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</div>
   </header>
 
   <section class="page-hero">
