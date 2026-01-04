@@ -12,25 +12,36 @@
   <!-- Header / Nav -->
   <header class="site-header">
     <div class="header-inner">
-      <div class="logo">
-        <a href="index.html">
-          <img src="images/hpc-logo.png" alt="Hines Park Conservancy logo">
-        </a>
-      </div>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/hpc-logo.png" alt="Hines Park Conservancy logo">
+    </a>
+  </div>
 
-      <nav class="site-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="our-park.html">Our Park</a></li>
-          <li><a href="projects.html" class="active">Projects</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="get-involved.html">Get Involved</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a class="donate" href="donate.html">Donate</a></li>
-        </ul>
-      </nav>
-    </div>
+  <!-- Right side: Donate + Hamburger always stay together -->
+  <div class="header-actions">
+    <a href="/donate.html" class="donate donate--primary">Donate</a>
+
+    <button class="nav-toggle" type="button"
+      aria-label="Open menu"
+      aria-controls="site-nav"
+      aria-expanded="false">
+      <span class="nav-toggle__icon" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <!-- Dropdown list (full width on mobile via CSS) -->
+  <nav class="site-nav" id="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/our-park.html">Our Park</a></li>
+      <li><a href="/projects.html">Projects</a></li>
+      <li><a href="/events.html">Events</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</div>
   </header>
 
 
@@ -52,5 +63,55 @@
   <footer>
     <p>© 2025 Hines Park Conservancy | info@hpc-hines.org</p>
   </footer>
+
+<script>
+(function () {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('site-nav');
+  const list = nav ? nav.querySelector('ul') : null;
+
+  if (!toggle || !nav || !list) return;
+
+  const mq = window.matchMedia('(max-width: 900px)');
+
+  function setExpanded(isOpen) {
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (isOpen) {
+      list.style.display = 'flex';
+      list.style.flexDirection = 'column';
+      list.style.alignItems = 'flex-start';
+    } else {
+      list.style.display = 'none';
+    }
+  }
+
+  function syncToViewport() {
+    if (mq.matches) {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      setExpanded(isOpen);
+    } else {
+      toggle.setAttribute('aria-expanded', 'false');
+      list.style.display = '';
+      list.style.flexDirection = '';
+      list.style.alignItems = '';
+    }
+  }
+
+  toggle.addEventListener('click', function () {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    setExpanded(!isOpen);
+  });
+
+  nav.addEventListener('click', function (e) {
+    const clickedLink = e.target.closest('a');
+    if (clickedLink && mq.matches) setExpanded(false);
+  });
+
+  mq.addEventListener ? mq.addEventListener('change', syncToViewport)
+                      : mq.addListener(syncToViewport);
+
+  syncToViewport();
+})();
+</script>  
 </body>
 </html>
