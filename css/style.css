@@ -54,7 +54,7 @@ body {
   padding: 0 1rem;         /* IMPORTANT: real edge protection so Donate never clips */
   display: flex;
   align-items: center;
-  justify-content: center; /* center the logo+nav group */
+  justify-content: space-between; /* desktop: logo left, donate right */
   gap: 1.25rem;
 }
 
@@ -165,6 +165,34 @@ body {
   background-size: 100% 3px;    /* bar thickness */
   background-repeat: no-repeat;
   border-radius: 2px;
+}
+
+/* -----------------------------
+   Desktop header alignment
+----------------------------- */
+@media (min-width: 901px) {
+  /* Hide hamburger on desktop */
+  .nav-toggle {
+    display: none !important;
+  }
+
+  /* Center the nav between logo and donate */
+  .site-nav {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Give nav links a little more breathing room */
+  .site-nav ul {
+    gap: 0.9rem;
+  }
+
+  /* Ensure Donate stays on the far right */
+  .donate--primary {
+    flex: 0 0 auto;
+    margin-left: 1rem;
+  }
 }
 
 /* -----------------------------------------
