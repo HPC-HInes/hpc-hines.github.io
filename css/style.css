@@ -710,4 +710,10 @@ body {
   .projects-image {
     min-height: 240px;
   }
+@media (min-width: 901px) {
+  .header-inner > .header-actions {
+    order: 3 !important;
+    margin-left: auto !important;
+  }
+}   
 }
