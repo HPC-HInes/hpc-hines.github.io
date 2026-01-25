@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate — Hines Park Conservancy</title>
+  <meta name="description" content="Support the Hines Park Conservancy. Donations will open soon as we finalize our 501(c)(3) approval.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Header / Nav (matches your updated header structure) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/hpc-logo.png" alt="Hines Park Conservancy logo">
+        </a>
+      </div>
+
+      <!-- Right side: Donate + Hamburger always stay together -->
+      <div class="header-actions">
+        <a href="/donate.html" class="donate donate--primary">Donate</a>
+
+        <button class="nav-toggle" type="button"
+          aria-label="Open menu"
+          aria-controls="site-nav"
+          aria-expanded="false">
+          <span class="nav-toggle__icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <!-- Dropdown list -->
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/our-park.html">Our Park</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page content -->
+  <main class="content">
+    <div class="container">
+      <h1>Support Hines Park Conservancy</h1>
+
+      <p class="intro-mission">
+        We’re finalizing our 501(c)(3) approval. Online donations will open as soon as that process is complete.
+      </p>
+
+      <p>
+        Want to help right now? We’d love to connect. Here are a few ways to support the mission today:
+      </p>
+
+      <div class="grid grid--cards" style="margin-top: 1rem;">
+        <div class="card">
+          <h3>Get Updates</h3>
+          <p>
+            Receive announcements about volunteer days, projects, and our donation launch.
+          </p>
+          <p>
+            <a class="btn" href="mailto:info@hpc-hines.org?subject=HPC%20Updates%20Signup&body=Hi%20Hines%20Park%20Conservancy%2C%0A%0APlease%20add%20me%20to%20your%20updates%20list.%0A%0AName%3A%0AEmail%3A%0A%0AThanks!">
+              Email to join the list
+            </a>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Volunteer</h3>
+          <p>
+            Help with cleanups, trail days, and community events. Tell us what you’re interested in.
+          </p>
+          <p>
+            <a class="btn btn--outline" href="mailto:info@hpc-hines.org?subject=Volunteer%20with%20HPC&body=Hi%20Hines%20Park%20Conservancy%2C%0A%0AI%E2%80%99d%20like%20to%20volunteer.%0A%0AName%3A%0APhone%3A%0AInterests%3A%20(cleanups%2Ftrails%2Fevents%2Fother)%0AAvailability%3A%0A%0AThanks!">
+              Volunteer interest
+            </a>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Sponsor a Project</h3>
+          <p>
+            If you’re a local business or community group, we can discuss sponsorship opportunities.
+          </p>
+          <p>
+            <a class="btn btn--outline" href="mailto:info@hpc-hines.org?subject=HPC%20Sponsorship%20Inquiry&body=Hi%20Hines%20Park%20Conservancy%2C%0A%0AI%E2%80%99m%20interested%20in%20sponsoring%20a%20project%20or%20event.%0A%0AName%3A%0AOrganization%3A%0APhone%3A%0AWhat%20you%E2%80%99d%20like%20to%20support%3A%0A%0AThanks!">
+              Sponsorship inquiry
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <hr style="margin: 2rem 0; opacity: 0.35;">
+
+      <h2>Online Donations (Coming Soon)</h2>
+
+      <p>
+        We’ll enable online donations immediately after our 501(c)(3) approval is confirmed.
+        If you’d like to be notified the moment it goes live, use the “Get Updates” button above.
+      </p>
+
+      <!-- Stripe drop-in later: replace ONLY the href value below -->
+      <p style="margin-top: 1rem;">
+        <a class="btn" href="mailto:info@hpc-hines.org?subject=Donation%20Question&body=Hi%20Hines%20Park%20Conservancy%2C%0A%0AI%E2%80%99m%20interested%20in%20donating.%20Please%20let%20me%20know%20when%20online%20donations%20are%20available.%0A%0AName%3A%0AEmail%3A%0A%0AThanks!">
+          Ask about donating
+        </a>
+      </p>
+
+      <p style="font-size: 0.95rem; opacity: 0.9; margin-top: 1rem;">
+        Note: Until our IRS determination is finalized, we do not describe donations as tax-deductible.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>
+        © 2025 Hines Park Conservancy<br>
+        <a href="mailto:info@hpc-hines.org">info@hpc-hines.org</a>
+      </p>
+
+      <div class="socials">
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('site-nav');
+    const list = nav ? nav.querySelector('ul') : null;
+
+    if (!toggle || !nav || !list) return;
+
+    const mq = window.matchMedia('(max-width: 900px)');
+
+    function setExpanded(isOpen) {
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      if (isOpen) {
+        list.style.display = 'flex';
+        list.style.flexDirection = 'column';
+        list.style.alignItems = 'flex-start';
+      } else {
+        list.style.display = 'none';
+      }
+    }
+
+    function syncToViewport() {
+      if (mq.matches) {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        setExpanded(isOpen);
+      } else {
+        toggle.setAttribute('aria-expanded', 'false');
+        list.style.display = '';
+        list.style.flexDirection = '';
+        list.style.alignItems = '';
+      }
+    }
+
+    toggle.addEventListener('click', function () {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      setExpanded(!isOpen);
+    });
+
+    nav.addEventListener('click', function (e) {
+      const clickedLink = e.target && e.target.closest && e.target.closest('a');
+      if (!clickedLink) return;
+      if (mq.matches) setExpanded(false);
+    });
+
+    if (mq.addEventListener) {
+      mq.addEventListener('change', syncToViewport);
+    } else {
+      mq.addListener(syncToViewport);
+    }
+
+    syncToViewport();
+  })();
+  </script>
+</body>
+</html>
