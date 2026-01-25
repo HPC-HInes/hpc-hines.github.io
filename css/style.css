@@ -491,6 +491,16 @@ body {
   padding: 1rem;
 }
 
+/* Card buttons: make text center + stop awkward wrapping */
+.card .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+}
+
 .grid {
   display: grid;
   gap: 1rem;
