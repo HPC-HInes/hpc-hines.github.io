@@ -501,30 +501,6 @@ body {
   white-space: nowrap;
 }
 
-/* Events cards: force a consistent left-aligned layout */
-.event-meta {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.event-date {
-  flex: 0 0 auto;
-}
-
-.event-details {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.event-desc,
-.event-details,
-.event-details__line {
-  margin-left: 0;
-  text-indent: 0;
-  text-align: left;
-}
-
 .grid {
   display: grid;
   gap: 1rem;
