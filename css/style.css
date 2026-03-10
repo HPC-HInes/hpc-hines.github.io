@@ -546,6 +546,11 @@ body {
   padding: 0.8rem 1.6rem;
 }
 
+.donation-btn {
+  position: relative;
+  z-index: 2;
+}
+
 .donation-note {
   font-size: 0.9rem;
   opacity: 0.85;
