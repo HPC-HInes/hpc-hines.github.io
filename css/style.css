@@ -521,6 +521,37 @@ body {
 }
 
 
+/* Donation highlight section */
+
+.donation-highlight {
+  max-width: 520px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--hpc-cream);
+  border-radius: 10px;
+  border: 1px solid var(--hpc-border);
+  text-align: center;
+}
+
+.donation-highlight h2 {
+  margin-top: 0;
+}
+
+.donation-lead {
+  margin-bottom: 1.25rem;
+}
+
+.donation-btn {
+  font-size: 1.05rem;
+  padding: 0.8rem 1.6rem;
+}
+
+.donation-note {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-top: 1rem;
+}
+
 /* Generic buttons (events page) */
 .btn {
   display: inline-block;
